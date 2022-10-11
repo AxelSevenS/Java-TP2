@@ -61,20 +61,9 @@ public class TP23 {
         boolean isMaried = mariedInput.equals("y") || mariedInput.equals("Y") || mariedInput.equals("yes") || mariedInput.equals("Yes");
 
 
-        int childrenAmount;
-        do {
-            System.out.print("Combien avez-vous d'enfants?");
-            childrenAmount = scanner.nextInt();
-        } 
-        while (childrenAmount < 0);
+        int childrenAmount = Utility.readInt(scanner, "Combien avez-vous d'enfants?", (x) -> x > 0);
 
-
-        double salary;
-        do {
-            System.out.print("Quel est le salaire total de votre foyer?");
-            salary = scanner.nextDouble();
-        } 
-        while (salary < 0);
+        double salary = Utility.readDouble(scanner, "Quel est le salaire total de votre foyer?", (x) -> x > 0);
 
 
         double familyQuotient = computeFamilyQuotient(isMaried, childrenAmount);
@@ -82,7 +71,7 @@ public class TP23 {
         double result = computeTaxAmount(salary / familyQuotient) * familyQuotient;
 
 
-        System.out.printf("Le montant de vos impôts est de %.2f€.", result);
+        System.out.printf("Le montant de vos impôts est de %.2f€.\n", result);
         
 
         return true;

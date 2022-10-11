@@ -54,16 +54,7 @@ public class TP24 {
      */
     public static boolean run(Scanner scanner) {
 
-        System.out.println("Entrez le nombre de terme de la suite à calculer :");
-        System.out.println("    0- Sortir");
-
-        int input = scanner.nextInt();
-
-        if (input == 0) return false;
-
-        if (input < 0) {
-            System.out.println("Erreur, la valeur ne peut pas être négative.");
-        }
+        int input = Utility.readInt(scanner, "Entrez le nombre de terme de la suite à calculer : \n    0- Sortir\n", (x) -> x > 0);
 
         System.out.printf("Le factoriel de %d est %d\n", input, factorial(input));
 

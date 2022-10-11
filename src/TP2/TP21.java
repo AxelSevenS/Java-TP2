@@ -8,7 +8,7 @@ public class TP21 {
 
 
 
-    public class Archimède {
+    public static class Archimède {
 
         /**
          *  @author     Axel Sevenet
@@ -75,10 +75,7 @@ public class TP21 {
      */
     public static boolean run(Scanner scanner) {
 
-        System.out.print("Entrez une valeur positive (0 pour terminer) : ");
-
-        // Get int from terminal input
-        int input = scanner.nextInt();
+        int input = Utility.readInt(scanner, "Entrez une valeur positive (0 pour terminer) : ", (x) -> x >= 0);
 
         try {
 
