@@ -36,7 +36,8 @@ public class TP25 {
 
             // On retire les allumettes en empêchant le nombre d'allumettes restantes d'être négatif
             matchesLeft = Math.max(matchesLeft - matchesTaken, 0);
-            System.out.printf("Il reste %d allumettes.\n", matchesLeft);
+            String matchesDrawing = " ".repeat(matchAmount - matchesLeft) + "|".repeat(matchesLeft);
+            System.out.printf("%s - Il reste %d allumettes.\n", matchesDrawing, matchesLeft);
 
 
             if (matchesLeft <= 0) {
